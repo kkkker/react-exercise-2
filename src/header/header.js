@@ -6,10 +6,12 @@ class Header extends Component {
     const { productsNumber } = this.props;
     return (
       <header>
-        <p>Store</p>
+        <h1>Store</h1>
         <div className="shopping_cart">
-          <FiShoppingCart />
-          <p>{productsNumber}</p>
+          <FiShoppingCart className="icon" />
+          <p className="product_number">
+            <i>{productsNumber}</i>
+          </p>
         </div>
       </header>
     );

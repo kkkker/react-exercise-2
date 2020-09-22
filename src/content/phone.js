@@ -5,7 +5,7 @@ class Phone extends Component {
   render() {
     const { product, onAddToCart } = this.props;
     return (
-      <div className={product.name}>
+      <div className="phone">
         <h3>{product.name}</h3>
         <img src={placeholder} alt="placeholder" />
         <p>{product.price}</p>

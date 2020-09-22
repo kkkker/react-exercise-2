@@ -39,3 +39,33 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+header {
+  background-color: $support-blue;
+  display: flex;
+  color: white;
+  height: fit-content;;
+}
+header h1 {
+  line-height: 70px;
+  margin-left: 20px;
+}
+
+.shopping_cart {
+  flex: 1;
+  display: flex;
+  align-self: center;
+}
+
+.icon {
+  margin-left: auto;
+}
+
+.product_number {
+  text-align: center;
+  width: 20px;
+  margin-right: 20px;
+  margin-left: 2px;
+  background-color: $support-red;
+  border-radius: 40%;
+}

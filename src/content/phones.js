@@ -6,6 +6,7 @@ class Phones extends Component {
     const { category, products, onAddToCart } = this.props;
     return (
       <div className={category}>
+        <h2>{category}</h2>
         {products.map((product) => {
           return (
             <Phone
