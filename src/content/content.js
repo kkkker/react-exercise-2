@@ -4,8 +4,6 @@ import Phones from './phones';
 class Content extends Component {
   render() {
     const { products, onAddToCart } = this.props;
-    console.log(this.props);
-    console.log(onAddToCart);
     const categorys = [...new Set(products.map((product) => product.category))];
     return (
       <div className="content">

@@ -7,9 +7,11 @@ class Phone extends Component {
     return (
       <div className="phone">
         <h3>{product.name}</h3>
-        <img src={placeholder} alt="placeholder" />
-        <p>{product.price}</p>
-        <button onClick={() => onAddToCart(product.name)}>add to cart</button>
+        <img className="phone_img" src={placeholder} alt="placeholder" />
+        <div className="purchase">
+          <p>{product.price}</p>
+          <button onClick={() => onAddToCart(product.name)}>add to cart</button>
+        </div>
       </div>
     );
   }

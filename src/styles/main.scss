@@ -69,3 +69,57 @@ header h1 {
   background-color: $support-red;
   border-radius: 40%;
 }
+
+.content {
+  padding: 0 20px;
+}
+
+.content h2 {
+  margin: 10px 0;
+}
+
+.phones {
+  display: flex;
+}
+
+.phones .phone {
+  flex: 1;
+}
+
+.phone_img {
+  width: 80%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.phones h3 {
+  margin: 10px 0;
+}
+
+.purchase {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.purchase button {
+  margin-right: 38px;
+  background-color: $support-blue;
+  border: none;
+  color: white;
+}
+
+.purchase button {
+  margin-right: 38px;
+  background-color: $support-blue;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.purchase button:hover,
+.purchase button:active {
+  background-color: $second-blue;
+  border: none;
+  color: white;
+}
