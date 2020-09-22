@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Header from './header/header';
+import Content from './content/content';
 
 class App extends Component {
-  state = {
-    shoppingCart: [{}],
+  state = {};
+
+  handleAddToCart = (name) => {
+    const products = this.state.products.map((product) => {
+      if (product.name === name) {
+        return {
+          ...product,
+          number: product.number + 1,
+        };
+      }
+      return {
+        ...product,
+      };
+    });
+
+    this.setState({
+      products: products,
+    });
   };
 
   componentDidMount() {
@@ -19,16 +36,14 @@ class App extends Component {
     const URL = 'http://localhost:3000/products';
     fetchData(URL)
       .then((result) => {
-        console.log(result);
-        const state = result.map((product) => {
+        const products = result.map((product) => {
           return {
-            product: product,
+            ...product,
             number: 0,
           };
         });
-        console.log(state);
         this.setState({
-          shoppingCart: state,
+          products: products,
         });
       })
       .catch((error) => {
@@ -36,12 +51,19 @@ class App extends Component {
       });
   }
   render() {
+    if (this.state.products === undefined) {
+      return <main className="app"></main>;
+    }
     return (
       <main className="app">
         <Header
-          productsNumber={this.state.shoppingCart.reduce((acc, cur) => {
+          productsNumber={this.state.products.reduce((acc, cur) => {
             return cur.number + acc;
           }, 0)}
+        />
+        <Content
+          products={this.state.products}
+          onAddToCart={this.handleAddToCart}
         />
       </main>
     );
